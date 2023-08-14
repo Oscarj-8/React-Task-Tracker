@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 const Button = ({ title, color }) => {
-  return <button style={{ backgroundColor: color }}>{title} </button>;
+  return <button style={{ backgroundColor: color }}>{title}</button>;
 };
 
 Button.propTypes = {
