@@ -97,6 +97,11 @@ form input[type="text"] {
   cursor: pointer;
 }
 
+.submit-btn.disabled {
+  background-color: rgb(235, 235, 235);
+  color: rgb(102, 102, 102);
+}
+
 .error-message {
   color: red;
   display: flex;

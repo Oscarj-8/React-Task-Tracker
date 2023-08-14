@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FaAsterisk } from "react-icons/fa";
 
 const AddTask = ({ onAddTask }) => {
-  const [text, setText] = useState("");
+  const [title, setTitle] = useState("");
   const [day, setDay] = useState("");
   const [reminder, setReminder] = useState(false);
   const [error, setError] = useState("");
@@ -11,21 +11,21 @@ const AddTask = ({ onAddTask }) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    if (!text) {
+    if (!title) {
       setError("Please add a task");
     } else {
       setError("");
     }
 
-    onAddTask({ text, day, reminder });
+    onAddTask({ title, day, reminder });
 
-    setText("");
+    setTitle("");
     setDay("");
     setReminder(false);
   };
 
   function handleChange(e) {
-    setText(e.target.value);
+    setTitle(e.target.value);
     setError("");
   }
 
@@ -38,10 +38,11 @@ const AddTask = ({ onAddTask }) => {
           id="task"
           name="task"
           placeholder="Add a task"
-          value={text}
+          value={title}
           onChange={handleChange}
         />
       </div>
+
       {error && (
         <p className="error-message">
           {error} <FaAsterisk size={10} />
@@ -69,7 +70,12 @@ const AddTask = ({ onAddTask }) => {
           onChange={(e) => setReminder(e.currentTarget.checked)}
         />
       </div>
-      <input type="submit" value="Save task" className="submit-btn" />
+      <input
+        type="submit"
+        value="Save task"
+        className={`submit-btn ${!title ? "disabled" : ""}`}
+        disabled={!title}
+      />
     </form>
   );
 };

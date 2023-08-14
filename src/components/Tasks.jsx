@@ -22,7 +22,6 @@ Tasks.propTypes = {
   tasks: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
     })
   ),
   onDelete: PropTypes.func.isRequired,
