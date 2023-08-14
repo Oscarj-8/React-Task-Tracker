@@ -53,3 +53,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
+.task.reminder {
+  border-left: 3px solid green;
+}
