@@ -1,42 +1,50 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  font-family: "Poppins", sans-serif;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+  width: 60%;
+  max-width: calc(55em * 0.8);
+  border: 1px solid black;
+  border-radius: 0.25em;
+  margin: 2em auto;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.card {
-  padding: 2em;
+.header button {
+  color: #fff;
+  padding: 0.8em 2em;
+  border-radius: 0.5em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-.read-the-docs {
-  color: #888;
+.tasks-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.task {
+  background-color: rgb(235, 235, 235);
+  border-radius: 0.25em;
+  padding: 0.5em 1em;
 }
