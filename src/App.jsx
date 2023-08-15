@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
@@ -7,26 +7,26 @@ import AddTask from "./components/AddTask";
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false);
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      title: "Go to Cinema",
-      day: "Feb 23, 3:00 PM",
-      reminder: true,
-    },
-    {
-      id: 2,
-      title: "Buy Microwave",
-      day: "Aub 13, 1:30 PM",
-      reminder: true,
-    },
-    {
-      id: 3,
-      title: "Watch Chelsea game",
-      day: "AUg 04, 2:00 PM",
-      reminder: false,
-    },
-  ]);
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    const getTasks = async () => {
+      const tasksFromServer = await fetchTasks();
+
+      setTasks(tasksFromServer);
+    };
+
+    getTasks();
+  }, []);
+
+  // Fetches tasks from the server
+  const fetchTasks = async () => {
+    const res = await fetch("http://localhost:5000/tasks");
+
+    const data = await res.json();
+
+    return data;
+  };
 
   const addTask = (task) => {
     const id = Math.floor(Math.random() * 1000) + 1;

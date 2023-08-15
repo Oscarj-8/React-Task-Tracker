@@ -6,8 +6,8 @@ function Header({ onShow, showAddTask }) {
     <div className="header">
       <h2>Task Tracker</h2>
       <Button
-        text={`${showAddTask ? "close" : "add"}`}
-        color={`${showAddTask ? "red" : "green"}`}
+        text={showAddTask ? "Close" : "Add"}
+        color={showAddTask ? "red" : "green"}
         onClick={onShow}
       />
     </div>
@@ -16,4 +16,7 @@ function Header({ onShow, showAddTask }) {
 
 export default Header;
 
-Header.propTypes = { showAddTask: PropTypes.boolean, onShow: PropTypes.func };
+Header.propTypes = {
+  onShow: PropTypes.func,
+  showAddTask: PropTypes.bool,
+};
