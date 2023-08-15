@@ -8,18 +8,22 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background: linear-gradient(248deg, #9b0e5d 0%, #5e1563 50%, #292a2c 100%)
+    no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .container {
   width: 60%;
   max-width: calc(55em * 0.8);
-  border: 1px solid rgb(204, 204, 204);
   border-radius: 0.5em;
   margin: 2em auto;
   padding: 1em;
   display: flex;
   flex-direction: column;
   gap: 1.5em;
+  box-shadow: 10px 10px 30px #000000;
 }
 
 .header {
@@ -29,6 +33,7 @@ body {
 }
 
 .header h2 {
+  color: #fff;
   font-size: 2em;
 }
 
@@ -59,7 +64,7 @@ body {
 }
 
 .task.reminder {
-  border-left: 5px solid green;
+  border-left: 8px solid #4caeff;
 }
 
 form {
@@ -76,10 +81,13 @@ form {
 
 form label {
   font-weight: 600;
+  color: #fff;
 }
 
 form input[type="text"] {
   padding: 0.5em;
+  border-radius: 0.25em;
+  border: none;
 }
 
 .checkbox-section {
@@ -107,4 +115,18 @@ form input[type="text"] {
   display: flex;
   align-items: flex-start;
   gap: 0.3em;
+}
+
+a {
+  text-decoration: none;
+  color: #c8c8c8;
+}
+
+.about {
+  color: #fff;
+}
+footer {
+  color: #fff;
+  align-self: center;
+  text-align: center;
 }

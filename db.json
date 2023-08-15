@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Go to Cinema",
       "day": "Feb 23, 3:00 PM",
-      "reminder": true
+      "reminder": false
     },
     {
       "id": 3,
@@ -15,7 +15,7 @@
     {
       "title": "Add task",
       "day": "feb 34",
-      "reminder": true,
+      "reminder": false,
       "id": 4
     }
   ]
