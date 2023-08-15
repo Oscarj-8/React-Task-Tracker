@@ -8,24 +8,33 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background: linear-gradient(248deg, #9b0e5d 0%, #5e1563 50%, #292a2c 100%)
+    no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .container {
   width: 60%;
   max-width: calc(55em * 0.8);
-  border: 1px solid black;
-  border-radius: 0.25em;
+  border-radius: 0.5em;
   margin: 2em auto;
   padding: 1em;
   display: flex;
   flex-direction: column;
   gap: 1.5em;
+  box-shadow: 10px 10px 30px #000000;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.header h2 {
+  color: #fff;
+  font-size: 2em;
 }
 
 .header button {
@@ -52,4 +61,72 @@ body {
 .task h3 {
   display: flex;
   justify-content: space-between;
+}
+
+.task.reminder {
+  border-left: 8px solid #4caeff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+form label {
+  font-weight: 600;
+  color: #fff;
+}
+
+form input[type="text"] {
+  padding: 0.5em;
+  border-radius: 0.25em;
+  border: none;
+}
+
+.checkbox-section {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.submit-btn {
+  background-color: black;
+  color: white;
+  padding: 0.8em 2em;
+  border-radius: 0.5em;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-btn.disabled {
+  background-color: rgb(235, 235, 235);
+  color: rgb(102, 102, 102);
+}
+
+.error-message {
+  color: red;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.3em;
+}
+
+a {
+  text-decoration: none;
+  color: #c8c8c8;
+}
+
+.about {
+  color: #fff;
+}
+footer {
+  color: #fff;
+  align-self: center;
+  text-align: center;
 }
